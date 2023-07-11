@@ -19,14 +19,37 @@ package main
 
 import "fmt"
 
-func printName(name string) {
-	fmt.Println("The name is", printName)
+//* Write a function that returns any two numbers
+func twoTwos() (int, int) {
+	return 2, 2
+}
+
+//* Write a function that returns any number
+func fives() int {
+	return 5
+}
+
+//* Write a function to add 3 numbers together, supplied as arguments, and
+func addThree(a, b, c int) int {
+	return a + b + c
+}
+
+//* Write a function that accepts a person's name as a function
+//  parameter and displays a greeting to that person.
+func greetPerson(name string) {
+	fmt.Println("hello", name)
+}
+//* Write a function that returns any message, and call it from within
+//  fmt.Println()
+func hiThere() string {
+	return "hi there!"
 }
 
 func main() {
-	var name string
-	fmt.Print("Enter you name: ")
-	fmt.Scanln(&name)
+	greetPerson("Milo")
+	fmt.Println(hiThere())
+	a, b := twoTwos()
+	answer := addThree(fives(), a, b)
 
-	println("Nice to meet you", name)
+	fmt.Println(answer)
 }
